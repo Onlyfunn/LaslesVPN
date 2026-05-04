@@ -411,7 +411,7 @@ div[class*="__container"] {
   @media (max-width: ($md + 30)) {
     min-height: max(100vh, 800px);
   }
-  @media (max-width: ($sm + 30)) {
+  @media (max-width: 450px) {
     min-height: max(100vh, 700px);
   }
   display: flex;

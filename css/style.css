@@ -394,7 +394,7 @@ div[class*=__container] {
     min-height: max(100vh, 800px);
   }
 }
-@media (max-width: 606px) {
+@media (max-width: 450px) {
   .preview {
     min-height: max(100vh, 700px);
   }
