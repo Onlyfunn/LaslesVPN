@@ -22,17 +22,10 @@ body {
   font-size: 16px;
   line-height: 187.5%;
   color: #0b132a;
-  padding-top: 140px;
 }
 @media (max-width: 1022px) {
   .body {
-    padding-top: 100px;
     font-size: 14px;
-  }
-}
-@media (max-width: 798px) {
-  .body {
-    padding-top: 60px;
   }
 }
 .body._lock {
@@ -384,7 +377,31 @@ div[class*=__container] {
 -----------------------------------------PREVIEW---------------------------------------------
 -------------------------------------------------------------------------------------------*/
 .preview {
-  padding: 40px 0 100px;
+  min-height: max(100vh, 700px);
+}
+@media (max-width: 1170px) {
+  .preview {
+    min-height: max(100vh, 600px);
+  }
+}
+@media (max-width: 1022px) {
+  .preview {
+    min-height: max(100vh, 500px);
+  }
+}
+@media (max-width: 798px) {
+  .preview {
+    min-height: max(100vh, 800px);
+  }
+}
+@media (max-width: 606px) {
+  .preview {
+    min-height: max(100vh, 700px);
+  }
+}
+.preview {
+  display: flex;
+  align-items: center;
 }
 .preview__container {
   display: flex;
@@ -439,4 +456,18 @@ div[class*=__container] {
 }
 .preview__image svg {
   width: 100%;
+}
+.preview__image ellipse.ellipse-animation {
+  animation: smoothBg 1s infinite alternate;
+}
+@keyframes smoothBg {
+  0% {
+    fill: #c10421;
+  }
+  50% {
+    fill: #3498db;
+  }
+  100% {
+    fill: #2ecc71;
+  }
 }
