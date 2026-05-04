@@ -27,6 +27,7 @@ body {
 @media (max-width: 1022px) {
   .body {
     padding-top: 100px;
+    font-size: 14px;
   }
 }
 @media (max-width: 798px) {
@@ -80,7 +81,7 @@ div[class*=__container] {
   justify-content: center;
   border: 1px #f53855 solid;
   border-radius: 50px;
-  background-color: transparent;
+  background-color: #fff;
   transition: all 0.2s ease;
   font-weight: 500;
   color: #f53855 !important;
@@ -89,6 +90,50 @@ div[class*=__container] {
   .button:hover {
     background-color: #f53838;
     color: #fff !important;
+  }
+}
+
+.button-rectangular {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px #f53855 solid;
+  border-radius: 10px;
+  background-color: #f53855;
+  transition: all 0.2s ease;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 20px;
+  min-width: 250px;
+  height: 60px;
+  position: relative;
+}
+.button-rectangular:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 84.8%;
+  filter: blur(30px);
+  height: 126.6666666667%;
+  background-color: rgba(245, 56, 85, 0.35);
+  top: 41.6666666667%;
+  left: auto;
+  right: auto;
+  transition: all 0.3s ease;
+}
+@media (hover: hover) {
+  .button-rectangular:hover {
+    background-color: #fff;
+    color: #f53855;
+  }
+  .button-rectangular:hover::after {
+    top: 0;
+  }
+}
+@media (max-width: 1022px) {
+  .button-rectangular {
+    min-width: 200px;
+    height: 50px;
   }
 }
 
@@ -265,6 +310,7 @@ div[class*=__container] {
     min-width: 0;
     height: auto;
     color: #eee;
+    background-color: transparent;
     padding: 0;
     font-size: 18px;
   }
@@ -332,4 +378,65 @@ div[class*=__container] {
     justify-content: flex-start;
     align-items: flex-start;
   }
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------PREVIEW---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+.preview {
+  padding: 40px 0 100px;
+}
+.preview__container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 798px) {
+  .preview__container {
+    flex-direction: column-reverse;
+  }
+}
+.preview__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 1 50%;
+}
+.preview__title {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 140%;
+}
+.preview__title span {
+  font-weight: 700;
+}
+@media (max-width: 1170px) {
+  .preview__title {
+    font-size: 42px;
+  }
+}
+@media (max-width: 1022px) {
+  .preview__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+}
+.preview__text span {
+  font-weight: 500;
+}
+.preview__text {
+  color: #4f5665;
+  margin-bottom: 50px;
+}
+@media (max-width: 1022px) {
+  .preview__text {
+    margin-bottom: 30px;
+  }
+}
+.preview__image {
+  flex: 0 1 50%;
+}
+.preview__image svg {
+  width: 100%;
 }
