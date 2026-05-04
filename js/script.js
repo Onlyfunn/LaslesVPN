@@ -42,8 +42,25 @@ if (iconMenu) {
   });
 }
 
+document.addEventListener("click", function (e) {
+  if (iconMenu.contains(e.target)) return;
+  if (menuBody.classList.contains("_active")) {
+    const clickX = e.clientX;
+    if (clickX / window.innerWidth > 0.6) {
+      document.body.classList.remove("_lock");
+      iconMenu.classList.remove("_active");
+      menuBody.classList.remove("_active");
+      menuBody.style.left = "";
+      menuBody.style.transition = "";
+    }
+  }
+});
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------ЗАКРЫТИЕ ПО СВАЙПУ И НАЖАТИЮ СПРАВА---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
 if (isMobile.any()) {
-  // или isTouchDevice
   let touchStart, leftStart;
 
   const startHandler = (e) => {
@@ -54,16 +71,6 @@ if (isMobile.any()) {
       menuBody.style.transition = "left 0s";
       touchStart = e.touches[0].clientX;
       leftStart = parseFloat(window.getComputedStyle(menuBody).left);
-
-      const clickX = e.touches[0].clientX;
-
-      if (clickX / window.innerWidth > 0.6) {
-        document.body.classList.remove("_lock");
-        iconMenu.classList.remove("_active");
-        menuBody.classList.remove("_active");
-        menuBody.style.left = "";
-        menuBody.style.transition = "";
-      }
     }
   };
 
@@ -83,6 +90,8 @@ if (isMobile.any()) {
       leftStart === undefined
     )
       return;
+
+    const clickX = e.changedTouches[0].clientX;
 
     menuBody.style.transition = "left 0.3s ease";
     const currentLeft = parseFloat(window.getComputedStyle(menuBody).left);
