@@ -582,6 +582,8 @@ div[class*="__container"] {
     }
     @media (max-width: ($sm + 30)) {
       padding: 15px 0;
+      width: 100%;
+      justify-content: flex-start;
     }
   }
 

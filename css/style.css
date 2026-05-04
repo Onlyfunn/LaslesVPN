@@ -564,6 +564,8 @@ div[class*=__container] {
 @media (max-width: 606px) {
   .stats__item {
     padding: 15px 0;
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 .stats__icon {
