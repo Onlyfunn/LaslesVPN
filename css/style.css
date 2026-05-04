@@ -105,14 +105,28 @@ div[class*=__container] {
   content: "";
   position: absolute;
   z-index: -1;
-  width: 84.8%;
+  width: 212px;
   filter: blur(30px);
-  height: 126.6666666667%;
+  height: 76px;
   background-color: rgba(245, 56, 85, 0.35);
-  top: 41.6666666667%;
+  top: 8px;
   left: auto;
   right: auto;
   transition: all 0.3s ease;
+}
+@media (max-width: 1022px) {
+  .button-rectangular:after {
+    width: 180px;
+    height: 60px;
+    filter: blur(20px);
+  }
+}
+@media (max-width: 606px) {
+  .button-rectangular:after {
+    width: 150px;
+    height: 55px;
+    filter: blur(20px);
+  }
 }
 @media (hover: hover) {
   .button-rectangular:hover {
@@ -391,12 +405,12 @@ div[class*=__container] {
 }
 @media (max-width: 798px) {
   .preview {
-    min-height: max(100vh, 800px);
+    min-height: 750px;
   }
 }
 @media (max-width: 450px) {
   .preview {
-    min-height: max(100vh, 700px);
+    min-height: 650px;
   }
 }
 .preview {
