@@ -42,6 +42,78 @@ if (iconMenu) {
   });
 }
 
+if (isMobile.any()) {
+  // или isTouchDevice
+  let touchStart, leftStart;
+
+  const startHandler = (e) => {
+    if (
+      menuBody.classList.contains("_active") &&
+      !iconMenu.contains(e.target)
+    ) {
+      menuBody.style.transition = "left 0s";
+      touchStart = e.touches[0].clientX;
+      leftStart = parseFloat(window.getComputedStyle(menuBody).left);
+
+      const clickX = e.touches[0].clientX;
+
+      if (clickX / window.innerWidth > 0.6) {
+        document.body.classList.remove("_lock");
+        iconMenu.classList.remove("_active");
+        menuBody.classList.remove("_active");
+        menuBody.style.left = "";
+        menuBody.style.transition = "";
+      }
+    }
+  };
+
+  const moveHandler = (e) => {
+    if (!menuBody.classList.contains("_active") || !touchStart) return;
+    if (!iconMenu.contains(e.target)) {
+      e.preventDefault();
+      const touchMove = touchStart - e.touches[0].clientX;
+      menuBody.style.left = `${leftStart - touchMove}px`;
+    }
+  };
+
+  const endHandler = (e) => {
+    if (
+      !menuBody.classList.contains("_active") ||
+      touchStart === undefined ||
+      leftStart === undefined
+    )
+      return;
+
+    menuBody.style.transition = "left 0.3s ease";
+    const currentLeft = parseFloat(window.getComputedStyle(menuBody).left);
+    const closeThreshold = currentLeft / window.innerWidth < -0.4;
+
+    if (closeThreshold) {
+      // закрыть меню
+      document.body.classList.remove("_lock");
+      iconMenu.classList.remove("_active");
+      menuBody.classList.remove("_active");
+      // сбросить стили
+      menuBody.style.left = "";
+      menuBody.style.transition = "";
+    } else {
+      menuBody.style.left = `${leftStart}px`;
+      // сбросить инлайн-стили после анимации
+      setTimeout(() => {
+        if (menuBody.classList.contains("_active")) {
+          menuBody.style.left = "";
+          menuBody.style.transition = "";
+        }
+      }, 300);
+    }
+    touchStart = leftStart = undefined; // очистить
+  };
+
+  document.addEventListener("touchstart", startHandler);
+  document.addEventListener("touchmove", moveHandler, { passive: false });
+  document.addEventListener("touchend", endHandler);
+}
+
 /*-------------------------------------------------------------------------------------------
 -----------------------------------------ПЛАВНОЕ ПЕРЕМЕЩЕНИЕ---------------------------------------------
 -------------------------------------------------------------------------------------------*/
