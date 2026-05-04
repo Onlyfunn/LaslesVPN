@@ -462,12 +462,30 @@ div[class*=__container] {
 }
 @keyframes smoothBg {
   0% {
-    fill: #c10421;
-  }
-  50% {
-    fill: #3498db;
+    fill: #ff7979;
   }
   100% {
-    fill: #2ecc71;
+    fill: #9effae;
+  }
+}
+.preview__image path.cup-animation {
+  animation: steamMove 3s ease-in-out infinite;
+}
+@keyframes steamMove {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateY(0px);
+  }
+  80% {
+    opacity: 0.6;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0px);
   }
 }
