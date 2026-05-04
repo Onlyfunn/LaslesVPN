@@ -405,12 +405,12 @@ div[class*=__container] {
 }
 @media (max-width: 798px) {
   .preview {
-    min-height: 750px;
+    min-height: max(100vh, 750px);
   }
 }
 @media (max-width: 450px) {
   .preview {
-    min-height: 650px;
+    min-height: max(100vh, 650px);
   }
 }
 .preview {
