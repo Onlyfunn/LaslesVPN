@@ -66,7 +66,6 @@ function onMenuLinkClick(e) {
 
     if (iconMenu) {
       if (iconMenu.classList.contains("_active")) {
-        console.log(menuBody);
         document.body.classList.remove("_lock");
         iconMenu.classList.remove("_active");
         menuBody.classList.remove("_active");
@@ -86,7 +85,7 @@ function onMenuLinkClick(e) {
 -------------------------------------------------------------------------------------------*/
 const header = document.querySelector(".header");
 
-if (!isMobile.any()) {
+if (window.innerWidth >= 798) {
   function checkHeaderPosition() {
     if (!header) return;
 
@@ -104,14 +103,23 @@ if (!isMobile.any()) {
   //скрытие
 
   let lastScrollTop = 0;
+  const scrollThreshold = 250;
 
   window.addEventListener("scroll", function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop && scrollTop > 200) {
-      header.classList.add("_hide");
-    } else if (scrollTop < lastScrollTop) {
-      header.classList.remove("_hide");
+    let delta = Math.abs(scrollTop - lastScrollTop);
+
+    if (scrollTop > lastScrollTop) {
+      if (scrollTop > 250) {
+        header.classList.add("_hide");
+      }
+      lastScrollTop = scrollTop;
+    } else {
+      if (delta > scrollThreshold) {
+        header.classList.remove("_hide");
+
+        lastScrollTop = scrollTop;
+      }
     }
-    lastScrollTop = scrollTop;
   });
 }
