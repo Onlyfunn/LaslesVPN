@@ -62,11 +62,13 @@ document.addEventListener("click", function (e) {
 
 if (isMobile.any()) {
   let touchStart, leftStart;
+  let menuList = document.querySelector(".menu__list");
 
   const startHandler = (e) => {
     if (
       menuBody.classList.contains("_active") &&
-      !iconMenu.contains(e.target)
+      !iconMenu.contains(e.target) &&
+      !menuList.contains(e.target)
     ) {
       menuBody.style.transition = "left 0s";
       touchStart = e.touches[0].clientX;
@@ -74,12 +76,22 @@ if (isMobile.any()) {
     }
   };
 
+  const isSwipeable = (el) => {
+    return !el.closest("a, button, .icon-menu, "); // не ссылка, не кнопка, не иконка
+  };
+
   const moveHandler = (e) => {
     if (!menuBody.classList.contains("_active") || !touchStart) return;
     if (!iconMenu.contains(e.target)) {
       e.preventDefault();
       const touchMove = touchStart - e.touches[0].clientX;
+
       menuBody.style.left = `${leftStart - touchMove}px`;
+      console.log(parseFloat(menuBody.style.left));
+
+      if (parseFloat(menuBody.style.left) > 0) {
+        menuBody.style.left = `0px`;
+      }
     }
   };
 
