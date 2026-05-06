@@ -79,7 +79,7 @@ div[class*=__container] {
   font-weight: 500;
   color: #f53855 !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (hover: hover) {
   .button:hover {
     background-color: #f53838;
     color: #fff !important;
@@ -190,25 +190,34 @@ div[class*=__container] {
 .header._scroll .menu__link {
   color: #eee;
 }
-.header._scroll .menu__link:hover {
-  color: #ccc;
+@media (hover: hover) {
+  .header._scroll .menu__link:hover {
+    color: #ccc;
+  }
 }
-.header._scroll .header__button:hover {
-  color: #ffffff;
+@media (hover: hover) {
+  .header._scroll .header__button:hover {
+    color: #ffffff;
+  }
 }
 .header._scroll .header__button.button {
-  color: #eee;
-  border-color: #eee;
+  color: #c10421 !important;
+  border-color: #eee !important;
+  background-color: #eee !important;
 }
-.header._scroll .header__button.button:hover {
-  background-color: #eee;
-  color: #c10421;
+@media (hover: hover) {
+  .header._scroll .header__button.button:hover {
+    background-color: rgba(193, 4, 32, 0.1568627451) !important;
+    color: #eee !important;
+  }
 }
 .header._scroll .header__logo path:nth-child(2) {
   fill: white;
 }
-.header._scroll .header__logo:hover path:nth-child(2) {
-  fill: #ddd;
+@media (hover: hover) {
+  .header._scroll .header__logo:hover path:nth-child(2) {
+    fill: #ddd;
+  }
 }
 .header__icon {
   display: none;
@@ -299,7 +308,7 @@ div[class*=__container] {
 .header__logo path {
   transition: all 0.2s ease;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (hover: hover) {
   .header__logo:hover path:nth-child(2) {
     fill: #c10421;
   }
@@ -327,7 +336,7 @@ div[class*=__container] {
   transition: all 0.3s ease;
   color: #0d1025;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (hover: hover) {
   .header__button:hover {
     color: #4f5665;
   }
@@ -377,11 +386,13 @@ div[class*=__container] {
   color: #4f5665;
 }
 @media (min-width: 1022px) {
-  .menu__link:hover {
-    color: #0d1025;
-  }
   .menu__link {
     font-size: 14px;
+  }
+}
+@media (min-width: 1022px) and (hover: hover) {
+  .menu__link:hover {
+    color: #0d1025;
   }
 }
 @media (max-width: 798px) {
@@ -774,18 +785,22 @@ div[class*=__container] {
     max-width: 400px;
   }
 }
-.body-pricing__item:hover {
-  border-color: #f53838;
+@media (hover: hover) {
+  .body-pricing__item:hover {
+    border-color: #f53838;
+  }
+  .body-pricing__item:hover .body-pricing__button {
+    background-color: #f53838 !important;
+    color: #fff !important;
+    box-shadow: 0px 17px 40px rgba(245, 56, 56, 0.35);
+  }
 }
-.body-pricing__item:hover .body-pricing__button {
-  background-color: #f53838 !important;
-  color: #fff !important;
-  box-shadow: 0px 17px 40px rgba(245, 56, 56, 0.35);
-}
-.body-pricing__item:hover .body-pricing__button:hover {
-  box-shadow: none;
-  color: #f53838 !important;
-  background-color: #fff !important;
+@media (hover: hover) and (hover: hover) {
+  .body-pricing__item:hover .body-pricing__button:hover {
+    box-shadow: none;
+    color: #f53838 !important;
+    background-color: #fff !important;
+  }
 }
 .body-pricing__image {
   width: 70%;
@@ -840,8 +855,10 @@ div[class*=__container] {
   width: 90%;
   height: 45px;
 }
-.body-pricing__button:hover {
-  box-shadow: 0px 17px 40px rgba(245, 56, 56, 0.35);
+@media (hover: hover) {
+  .body-pricing__button:hover {
+    box-shadow: 0px 17px 40px rgba(245, 56, 56, 0.35);
+  }
 }
 
 /*-------------------------------------------------------------------------------------------
