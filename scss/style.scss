@@ -160,7 +160,9 @@ div[class*="__container"] {
 .subtitle {
   margin: auto;
   text-align: center;
+  max-width: 500px;
 }
+
 /*-------------------------------------------------------------------------------------------
 -----------------------------------------HEADER---------------------------------------------
 -------------------------------------------------------------------------------------------*/
@@ -635,6 +637,7 @@ div[class*="__container"] {
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 4.5px;
+    color: #0d1025;
     @media (max-width: ($lg + 30)) {
       font-size: 18px;
       margin-bottom: 0;
@@ -668,6 +671,9 @@ div[class*="__container"] {
 .features {
   // .features__container
   padding: 100px 0 130px;
+  @media (max-width: ($md + 30)) {
+    padding: 60px 0;
+  }
 
   &__container {
     display: flex;
@@ -745,7 +751,7 @@ div[class*="__container"] {
 .pricing {
   // .pricing__container
   padding: 80px 0px 150px;
-  background-color: #fbfbfb;
+  background: linear-gradient(#fafafa, #fdfdfd);
   @media (max-width: ($lg + 30)) {
     padding: 60px 0px;
   }
@@ -899,4 +905,36 @@ div[class*="__container"] {
   }
 }
 .button {
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------NETWORK---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+.network {
+  // .network__container
+  background: linear-gradient(#fdfdfd, #fff);
+  &__container {
+  }
+
+  // .network__title
+
+  &__title {
+    max-width: 360px;
+  }
+
+  // .network__subtitle
+
+  &__subtitle {
+    margin-bottom: min(155px, calc(155 / 1140 * 100vw));
+  }
+
+  // .network__image
+
+  &__image {
+    width: 100%;
+    svg {
+      width: 100%;
+    }
+  }
 }
