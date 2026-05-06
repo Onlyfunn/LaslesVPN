@@ -21,7 +21,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 187.5%;
-  color: #0b132a;
+  color: #4f5665;
 }
 @media (max-width: 1022px) {
   .body {
@@ -141,6 +141,18 @@ div[class*=__container] {
   .button-rectangular {
     min-width: 200px;
     height: 50px;
+  }
+}
+
+.title {
+  font-size: 35px;
+  color: #0d1025;
+  line-height: 142.8571428571%;
+  font-weight: 500;
+}
+@media (max-width: 1022px) {
+  .title {
+    font-size: 28px;
   }
 }
 
@@ -297,8 +309,9 @@ div[class*=__container] {
   min-width: 150px;
   height: 45px;
   padding: 10px 15px;
-  color: #0b132a;
+  color: #4f5665;
   transition: all 0.3s ease;
+  color: #0d1025;
 }
 @media (min-width: 992px) {
   .header__button:hover {
@@ -351,7 +364,7 @@ div[class*=__container] {
 }
 @media (min-width: 1022px) {
   .menu__link:hover {
-    color: #0b132a;
+    color: #0d1025;
   }
   .menu__link {
     font-size: 14px;
@@ -438,6 +451,7 @@ div[class*=__container] {
   font-weight: 500;
   margin-bottom: 20px;
   line-height: 140%;
+  color: #0d1025;
 }
 .preview__title span {
   font-weight: 700;
@@ -619,4 +633,60 @@ div[class*=__container] {
     font-size: 12px;
     line-height: 1;
   }
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------FEATURES---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+.features {
+  padding: 100px 0 130px;
+}
+.features__container {
+  display: flex;
+  align-items: center;
+  gap: 14.9122807018%;
+}
+@media (max-width: 798px) {
+  .features__container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.features__image {
+  flex: 0 1 55%;
+}
+.features__image svg {
+  width: 100%;
+}
+.features__body {
+  flex: 0 1 45%;
+}
+.features__title {
+  margin-bottom: 20px;
+}
+.features__text {
+  margin-bottom: 20px;
+}
+.features__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.features__item {
+  padding-left: 34px;
+  position: relative;
+}
+.features__item:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/features/icon.svg);
+}
+.features__link {
+  font-size: 14px;
+  color: #4f5665;
 }
