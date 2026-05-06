@@ -155,7 +155,10 @@ function onMenuLinkClick(e) {
   if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
     const gotoBlock = document.querySelector(menuLink.dataset.goto);
     const gotoBlockValue =
-      gotoBlock.getBoundingClientRect().top + pageYOffset - headerHeight;
+      gotoBlock.getBoundingClientRect().top +
+      pageYOffset -
+      window.innerHeight / 2 +
+      gotoBlock.offsetHeight / 2;
 
     if (iconMenu) {
       if (iconMenu.classList.contains("_active")) {
