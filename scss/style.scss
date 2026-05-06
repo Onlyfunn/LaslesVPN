@@ -155,6 +155,9 @@ div[class*="__container"] {
   @media (max-width: ($lg + 30)) {
     font-size: 28px;
   }
+  @media (max-width: ($md + 30)) {
+    font-size: 22px;
+  }
 }
 
 .subtitle {
@@ -935,6 +938,91 @@ div[class*="__container"] {
     width: 100%;
     svg {
       width: 100%;
+      circle,
+      g {
+        transition: all 0.2s ease;
+        @media (hover: hover) {
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------PLATFORMS---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+.platforms {
+  // .platforms__container
+  padding: 80px 100px;
+  @media (max-width: ($md+30)) {
+    padding: 30px 0;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4vw;
+  }
+
+  // .platforms__image
+
+  &__image {
+    flex: 0 1 20%;
+    svg {
+      width: 100%;
+    }
+    g > rect {
+      transition: all 0.2s ease;
+    }
+    &:nth-child(1) {
+      g > rect {
+        @media (hover: hover) {
+          &:hover {
+            fill: #e50914;
+          }
+        }
+      }
+    }
+    &:nth-child(2) {
+      g > rect {
+        @media (hover: hover) {
+          &:hover {
+            fill: #ff4500;
+          }
+        }
+      }
+    }
+    &:nth-child(3) {
+      g > rect {
+        @media (hover: hover) {
+          &:hover {
+            fill: #ff9900;
+          }
+        }
+      }
+    }
+    &:nth-child(4) {
+      g > rect {
+        @media (hover: hover) {
+          &:hover {
+            fill: #5865f2;
+          }
+        }
+      }
+    }
+    &:nth-child(5) {
+      g > rect {
+        @media (hover: hover) {
+          &:hover {
+            fill: #1db954;
+          }
+        }
+      }
     }
   }
 }

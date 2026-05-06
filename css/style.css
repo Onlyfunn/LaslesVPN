@@ -158,6 +158,11 @@ div[class*=__container] {
     font-size: 28px;
   }
 }
+@media (max-width: 798px) {
+  .title {
+    font-size: 22px;
+  }
+}
 
 .subtitle {
   margin: auto;
@@ -856,4 +861,66 @@ div[class*=__container] {
 }
 .network__image svg {
   width: 100%;
+}
+.network__image svg circle,
+.network__image svg g {
+  transition: all 0.2s ease;
+}
+@media (hover: hover) {
+  .network__image svg circle:hover,
+  .network__image svg g:hover {
+    opacity: 0.5;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------PLATFORMS---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+.platforms {
+  padding: 80px 100px;
+}
+@media (max-width: 798px) {
+  .platforms {
+    padding: 30px 0;
+  }
+}
+.platforms__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4vw;
+}
+.platforms__image {
+  flex: 0 1 20%;
+}
+.platforms__image svg {
+  width: 100%;
+}
+.platforms__image g > rect {
+  transition: all 0.2s ease;
+}
+@media (hover: hover) {
+  .platforms__image:nth-child(1) g > rect:hover {
+    fill: #e50914;
+  }
+}
+@media (hover: hover) {
+  .platforms__image:nth-child(2) g > rect:hover {
+    fill: #ff4500;
+  }
+}
+@media (hover: hover) {
+  .platforms__image:nth-child(3) g > rect:hover {
+    fill: #ff9900;
+  }
+}
+@media (hover: hover) {
+  .platforms__image:nth-child(4) g > rect:hover {
+    fill: #5865f2;
+  }
+}
+@media (hover: hover) {
+  .platforms__image:nth-child(5) g > rect:hover {
+    fill: #1db954;
+  }
 }
