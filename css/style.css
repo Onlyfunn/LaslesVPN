@@ -941,3 +941,179 @@ div[class*=__container] {
     fill: #1db954;
   }
 }
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------TESTIMONIALS---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+.testimonials {
+  overflow-x: hidden;
+  padding: 50px 0 180px;
+}
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 20px 0 100px;
+  }
+}
+.testimonials__subtitle {
+  margin-bottom: 60px;
+}
+@media (max-width: 1022px) {
+  .testimonials__subtitle {
+    margin-bottom: 30px;
+  }
+}
+.swiper-testimonials {
+  width: 100vw; /* полная ширина окна */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* центрирование относительно окна */
+  overflow: hidden; /* скрыть лишнее, если нужно */
+  padding-left: calc((100vw - 100%) / 2); /* важный отступ слева */
+}
+.swiper-testimonials__buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+@media (max-width: 798px) {
+  .swiper-testimonials__buttons {
+    display: none;
+  }
+}
+.swiper-testimonials__pagination {
+  position: static;
+  text-align: left;
+}
+.swiper-testimonials__pagination .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: #dde0e4;
+  transition: all 0.2s ease;
+}
+.swiper-testimonials__pagination .swiper-pagination-bullet-active {
+  background-color: #f53838;
+}
+.swiper-testimonials__prev {
+  position: static;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.swiper-testimonials__next {
+  position: static;
+  margin-left: auto;
+}
+.swiper-testimonials__prev, .swiper-testimonials__next {
+  min-width: 60px;
+  min-width: none;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px #f53838 solid;
+  background-color: #fff;
+}
+.swiper-testimonials__prev svg, .swiper-testimonials__next svg {
+  width: 20px;
+}
+.swiper-testimonials__prev, .swiper-testimonials__next {
+  transition: all 0.2s ease;
+}
+.swiper-testimonials__prev path, .swiper-testimonials__next path {
+  transition: all 0.2s ease;
+}
+@media (hover: hover) {
+  .swiper-testimonials__prev:hover, .swiper-testimonials__next:hover {
+    background-color: #f53838;
+  }
+  .swiper-testimonials__prev:hover path, .swiper-testimonials__next:hover path {
+    fill: #fff;
+  }
+}
+
+.slide-testimonials {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px #ddd solid;
+  transition: all 0.2s ease;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+@media (hover: hover) {
+  .slide-testimonials:hover {
+    border-color: #f53838;
+  }
+}
+@media (max-width: 1022px) {
+  .slide-testimonials {
+    padding: 20px;
+  }
+}
+.slide-testimonials__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media (max-width: 1022px) {
+  .slide-testimonials__header {
+    margin-bottom: 10px;
+  }
+}
+.slide-testimonials__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+@media (max-width: 1022px) {
+  .slide-testimonials__icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+}
+.slide-testimonials__icon img {
+  width: 100%;
+  height: 100%;
+}
+.slide-testimonials__title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.slide-testimonials__name {
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0d1025;
+}
+@media (max-width: 1022px) {
+  .slide-testimonials__name {
+    font-size: 14px;
+  }
+}
+.slide-testimonials__place {
+  line-height: 1;
+  font-size: 12px;
+}
+.slide-testimonials__star {
+  margin-left: auto;
+  position: relative;
+  padding-right: 27px;
+}
+.slide-testimonials__star:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/testimonials/star.svg);
+}
+@media (max-width: 1022px) {
+  .slide-testimonials__text {
+    font-size: 14px;
+  }
+}

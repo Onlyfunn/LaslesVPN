@@ -219,3 +219,42 @@ if (window.innerWidth >= 798) {
     }
   });
 }
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------SWIPER---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  loop: false,
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-testimonials__pagination",
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-testimonials__next",
+    prevEl: ".swiper-testimonials__prev",
+  },
+  slidesPerView: 3,
+  spaceBetween: 50,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.1,
+      spaceBetween: 15,
+    },
+    596: {
+      slidesPerView: 2,
+    },
+    798: {
+      slidesPerView: 3,
+    },
+    1022: {
+      spaceBetween: 30,
+    },
+  },
+});
