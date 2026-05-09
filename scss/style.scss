@@ -212,7 +212,7 @@ div[class*="__container"] {
         }
       }
     }
-    .logo {
+    .header__logo {
       path:nth-child(2) {
         fill: white;
       }
@@ -1411,6 +1411,51 @@ div[class*="__container"] {
   &__logo {
   }
   margin-bottom: 20px;
+  &__logo {
+    path:nth-child(2) {
+      fill: white;
+    }
+    @media (hover: hover) {
+      &:hover {
+        path:nth-child(2) {
+          fill: #ddd;
+        }
+      }
+    }
+  }
+  &__logo {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    svg {
+      width: 100%;
+    }
+    @media (max-width: ($lg + 30)) {
+      width: 130px;
+    }
+    @media (max-width: ($md + 30)) {
+      margin-bottom: 40px;
+      width: 150px;
+    }
+    path {
+      transition: all 0.2s ease;
+      &:nth-child(2) {
+        fill: #f53838;
+      }
+    }
+    @media (min-width: $lg) {
+      @media (hover: hover) {
+        &:hover {
+          path:nth-child(2) {
+            fill: #c10421;
+          }
+          path:nth-child(1) {
+            transform: translateX(-4px);
+          }
+        }
+      }
+    }
+  }
 
   // .block-1-footer__text
 
