@@ -1124,6 +1124,7 @@ div[class*="__container"] {
       background-color: #dde0e4;
       transition: all 0.2s ease;
       left: 0;
+      transition-delay: 0.1s;
     }
     .swiper-pagination-bullet-active {
       background-color: #f53838;
