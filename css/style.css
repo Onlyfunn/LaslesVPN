@@ -981,7 +981,7 @@ div[class*=__container] {
   }
 }
 .swiper-testimonials__pagination {
-  position: static;
+  position: relative;
   text-align: left;
 }
 .swiper-testimonials__pagination .swiper-pagination-bullet {
@@ -989,9 +989,59 @@ div[class*=__container] {
   height: 15px;
   background-color: #dde0e4;
   transition: all 0.2s ease;
+  left: 0;
 }
 .swiper-testimonials__pagination .swiper-pagination-bullet-active {
   background-color: #f53838;
+  transition-delay: 0.3s;
+}
+.swiper-testimonials__pagination .animation-line {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 15px;
+  width: 55px;
+  border-radius: 7.5px;
+  overflow: hidden;
+}
+.swiper-testimonials__pagination .animation-line:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  padding: 0 4px;
+  width: 100%;
+  height: 100%;
+  border-radius: 7.5px;
+  background-color: #f53838;
+}
+.swiper-testimonials__pagination .animation-line.left::before {
+  animation: animationLineLeft 0.5s ease-out;
+}
+.swiper-testimonials__pagination .animation-line.right::before {
+  animation: animationLineRight 0.5s ease-out;
+}
+@keyframes animationLineLeft {
+  0% {
+    left: 100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: calc(-100% + 15px);
+  }
+}
+@keyframes animationLineRight {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 15px);
+  }
 }
 .swiper-testimonials__prev {
   position: static;

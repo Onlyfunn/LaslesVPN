@@ -261,4 +261,43 @@ const swiper = new Swiper(".swiper", {
       spaceBetween: 30,
     },
   },
+  on: {
+    slideChange: function () {
+      const bullets = document.querySelectorAll(".swiper-pagination-bullet");
+      const pagination = document.querySelector(
+        ".swiper-testimonials__pagination",
+      );
+      const container = document.querySelector('[class*="__container"]');
+      let conx = container.getBoundingClientRect().left;
+
+      let el1 = bullets[this.activeIndex];
+      let el2 = bullets[this.previousIndex];
+
+      let rect1 = el1.getBoundingClientRect();
+      let rect2 = el2.getBoundingClientRect();
+
+      let dx = rect1.left - rect2.left;
+      let dy = rect1.top - rect2.top;
+
+      let distance = Math.hypot(dx, dy); // эквивалент Math.sqrt(dx*dx + dy*dy)
+      console.log(rect1.left);
+
+      let animationLine = document.createElement("div");
+      animationLine.className = "animation-line";
+      if (this.activeIndex > this.previousIndex) {
+        animationLine.style.width = `${distance + 15}px`;
+        animationLine.style.left = `${rect2.left - conx - 15}px`;
+        animationLine.classList.add("right");
+      } else {
+        animationLine.style.width = `${distance + 15}px`;
+        animationLine.style.left = `${rect1.left - conx - 15}px`;
+        animationLine.classList.add("left");
+      }
+
+      pagination.appendChild(animationLine);
+      setTimeout(() => {
+        animationLine.remove();
+      }, 500);
+    },
+  },
 });
