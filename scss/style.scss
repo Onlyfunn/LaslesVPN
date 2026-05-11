@@ -1117,6 +1117,7 @@ div[class*="__container"] {
   &__pagination {
     position: relative;
     text-align: left;
+    line-height: 0;
     .swiper-pagination-bullet {
       width: 15px;
       height: 15px;
