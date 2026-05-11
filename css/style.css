@@ -983,6 +983,7 @@ div[class*=__container] {
 .swiper-testimonials__pagination {
   position: relative;
   text-align: left;
+  line-height: 0;
 }
 .swiper-testimonials__pagination .swiper-pagination-bullet {
   width: 15px;
@@ -997,7 +998,7 @@ div[class*=__container] {
 }
 .swiper-testimonials__pagination .animation-line {
   position: absolute;
-  top: 5px;
+  top: 0px;
   left: 0;
   height: 15px;
   width: 55px;
