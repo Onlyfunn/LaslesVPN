@@ -87,7 +87,6 @@ if (isMobile.any()) {
       const touchMove = touchStart - e.touches[0].clientX;
 
       menuBody.style.left = `${leftStart - touchMove}px`;
-      console.log(parseFloat(menuBody.style.left));
 
       if (parseFloat(menuBody.style.left) > 0) {
         menuBody.style.left = `0px`;
@@ -280,7 +279,6 @@ const swiper = new Swiper(".swiper", {
       let dy = rect1.top - rect2.top;
 
       let distance = Math.hypot(dx, dy); // эквивалент Math.sqrt(dx*dx + dy*dy)
-      console.log(rect1.left);
 
       let animationLine = document.createElement("div");
       animationLine.className = "animation-line";
